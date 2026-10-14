@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SkyCast — Weather App
+
+SkyCast is a responsive weather application built with Next.js and TypeScript. It allows users to search for cities, check current weather conditions, and explore hourly forecasts.
+
+**Live Demo:** https://weatherapp-zeta-pink.vercel.app/
+
+## Features
+
+- Search for cities around the world
+- View current weather conditions and temperature
+- Check humidity, wind speed, and other weather details
+- Explore hourly weather forecasts
+- Display weather icons based on current conditions
+- Use Dhaka as the default location
+- Handle loading states and API errors
+- Retry requests when weather data cannot be retrieved
+- Responsive layout for desktop, tablet, and mobile devices
+- Separate About, Services, and Contact pages
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Open-Meteo Weather API
+- Open-Meteo Geocoding API
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure Node.js and npm are installed on your machine.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/atikur-web-dev/WeatherApp.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd WeatherApp
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+SkyCast uses Open-Meteo to retrieve weather forecasts and search for locations.
 
-## Learn More
+- Weather API: https://open-meteo.com/en/docs
+- Geocoding API: https://open-meteo.com/en/docs/geocoding-api
 
-To learn more about Next.js, take a look at the following resources:
+The current implementation does not require an API key.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+WeatherApp/
+├── app/
+│   ├── about/
+│   │   └── page.tsx
+│   ├── services/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── WeatherCard.tsx
+│   ├── WeatherDetails.tsx
+│   ├── HourlyForecast.tsx
+│   └── WeatherIcon.tsx
+├── lib/
+│   └── weather.ts
+├── public/
+├── package.json
+└── README.md
+```
 
-## Deploy on Vercel
+## Production Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To create a production build, run:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+To run the production build locally:
+
+```bash
+npm run start
+```
+
+## Deployment
+
+The application is deployed on Vercel.
+
+**Live Application:** https://weatherapp-zeta-pink.vercel.app/
+
+## Purpose
+
+This project was developed to practice Next.js, TypeScript, reusable React components, API integration, asynchronous data fetching, error handling, and responsive web design.
+
+## Author
+
+**Atikur Rahman**
+
+- GitHub: https://github.com/atikur-web-dev
+- LinkedIn: https://www.linkedin.com/in/atikur-rahman-0475b438
+- Portfolio: https://personal-portfolio-one-nu-58.vercel.app
