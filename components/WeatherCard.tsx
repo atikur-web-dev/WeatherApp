@@ -1,8 +1,6 @@
 import { CloudSun, MapPin } from "lucide-react";
-import {
-  getWeatherDescription,
-  type WeatherData,
-} from "@/lib/weather";
+import { getWeatherDescription, type WeatherData } from "@/lib/weather";
+import WeatherIcon from "@/components/WeatherIcon";
 
 interface WeatherCardProps {
   weather: WeatherData;
@@ -30,9 +28,7 @@ export default function WeatherCard({
 
       <div className="mt-8 flex flex-col items-center justify-between gap-8 sm:flex-row">
         <div>
-          <p className="text-lg text-sky-100">
-            Current Weather
-          </p>
+          <p className="text-lg text-sky-100">Current Weather</p>
 
           <h2 className="mt-3 text-7xl font-bold tracking-tight">
             {Math.round(current.temperature_2m)}°
@@ -44,16 +40,15 @@ export default function WeatherCard({
           </p>
 
           <p className="mt-2 text-sm text-sky-100">
-            Feels like{" "}
-            {Math.round(current.apparent_temperature)}°C
+            Feels like {Math.round(current.apparent_temperature)}°C
           </p>
         </div>
 
         <div className="flex h-36 w-36 items-center justify-center rounded-full bg-white/15">
-          <CloudSun
+          <WeatherIcon
+            code={current.weather_code}
+            isDay={current.is_day}
             size={100}
-            strokeWidth={1.3}
-            aria-label="Weather icon"
           />
         </div>
       </div>

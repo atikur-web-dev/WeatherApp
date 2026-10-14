@@ -36,14 +36,15 @@ export interface WeatherData {
     wind_direction_10m: number;
   };
 
-  hourly: {
-    time: string[];
-    temperature_2m: number[];
-    relative_humidity_2m: number[];
-    precipitation_probability: number[];
-    weather_code: number[];
-    wind_speed_10m: number[];
-  };
+hourly: {
+  time: string[];
+  temperature_2m: number[];
+  relative_humidity_2m: number[];
+  precipitation_probability: number[];
+  weather_code: number[];
+  wind_speed_10m: number[];
+  is_day: number[];
+};
 
   hourly_units: {
     temperature_2m: string;
@@ -101,13 +102,14 @@ export async function getWeather(
       "wind_direction_10m",
     ].join(","),
 
-    hourly: [
-      "temperature_2m",
-      "relative_humidity_2m",
-      "precipitation_probability",
-      "weather_code",
-      "wind_speed_10m",
-    ].join(","),
+hourly: [
+  "temperature_2m",
+  "relative_humidity_2m",
+  "precipitation_probability",
+  "weather_code",
+  "wind_speed_10m",
+  "is_day",
+].join(","),
 
     timezone: "auto",
     forecast_days: "2",
@@ -138,21 +140,30 @@ export function getWeatherDescription(code: number): string {
     51: "Light drizzle",
     53: "Moderate drizzle",
     55: "Dense drizzle",
+    56: "Light freezing drizzle",
+    57: "Dense freezing drizzle",
 
     61: "Slight rain",
     63: "Moderate rain",
     65: "Heavy rain",
+    66: "Light freezing rain",
+    67: "Heavy freezing rain",
 
     71: "Slight snowfall",
     73: "Moderate snowfall",
     75: "Heavy snowfall",
+    77: "Snow grains",
 
     80: "Slight rain showers",
     81: "Moderate rain showers",
     82: "Violent rain showers",
 
+    85: "Slight snow showers",
+    86: "Heavy snow showers",
+
     95: "Thunderstorm",
-    96: "Thunderstorm with hail",
+    96: "Thunderstorm with slight hail",
+    97: "Heavy thunderstorm",
     99: "Thunderstorm with heavy hail",
   };
 
