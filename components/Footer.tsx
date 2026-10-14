@@ -37,10 +37,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-slate-200 pt-6 text-center">
-  <p className="text-sm text-slate-500">
-    © 2026 SkyCast. Weather information powered by Open-Meteo.
-  </p>
-</div>
+          <p className="text-sm text-slate-500">
+            © 2026 SkyCast. Weather information powered by Open-Meteo.
+          </p>
+        </div>
       </div>
     </footer>
   );
